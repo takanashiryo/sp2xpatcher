@@ -2,7 +2,7 @@
     {
         "gameCode": "KFC",
         "version": "2026-02-03",
-        "lastUpdated": "2026-04-04 02:04:26",
+        "lastUpdated": "2026-04-30 07:42:10",
         "source": "https://patcher.573.moe/"
     },
     {
@@ -159,6 +159,87 @@
                 "dllName": "soundvoltex.dll",
                 "dataDisabled": "8347815B83578393834F928682C582B728257381602989F08F9C82B782E982C982CD8365835883678381836A8385815B82C993FC82E8814183658393834C815B82F02030302C2030302C2030302C20362C20302082CC8F8782C5899F82B582C482AD82BE82B382A281420A8347815B83578393834F82F08DC48A4A82B782E98FEA8D8782CD8365835883678356815B839382C530302C2030302C2030302C20362C20312082CC8F8782C5899F82B582C482AD82BE82B382A28142",
                 "dataEnabled": "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+            }
+        ]
+    },
+    {
+        "name": "Hide Timer",
+        "description": "Hides all timer visuals on main/sub screen.",
+        "caution": "Recommended to combine with timer freeze.",
+        "gameCode": "KFC",
+        "type": "memory",
+        "patches": [
+            {
+                "offset": 1352350,
+                "dllName": "soundvoltex.dll",
+                "dataDisabled": "01",
+                "dataEnabled": "00"
+            },
+            {
+                "offset": 2193582,
+                "dllName": "soundvoltex.dll",
+                "dataDisabled": "01",
+                "dataEnabled": "00"
+            },
+            {
+                "offset": 4844377,
+                "dllName": "soundvoltex.dll",
+                "dataDisabled": "01",
+                "dataEnabled": "00"
+            },
+            {
+                "offset": 2188618,
+                "dllName": "soundvoltex.dll",
+                "dataDisabled": "400FB6D5",
+                "dataEnabled": "33D29090"
+            },
+            {
+                "offset": 1795027,
+                "dllName": "soundvoltex.dll",
+                "dataDisabled": "F30F101595127600",
+                "dataEnabled": "0F57D29090909090"
+            },
+            {
+                "offset": 1796865,
+                "dllName": "soundvoltex.dll",
+                "dataDisabled": "F30F1015670B7600",
+                "dataEnabled": "0F57D29090909090"
+            },
+            {
+                "offset": 1801953,
+                "dllName": "soundvoltex.dll",
+                "dataDisabled": "0F28DF",
+                "dataEnabled": "0F57DB"
+            },
+            {
+                "offset": 1801956,
+                "dllName": "soundvoltex.dll",
+                "dataDisabled": "0F28D7",
+                "dataEnabled": "33D290"
+            },
+            {
+                "offset": 1801962,
+                "dllName": "soundvoltex.dll",
+                "dataDisabled": "E861844500",
+                "dataEnabled": "E862814500"
+            },
+            {
+                "offset": 1802191,
+                "dllName": "soundvoltex.dll",
+                "dataDisabled": "0F28DF",
+                "dataEnabled": "0F57DB"
+            },
+            {
+                "offset": 1802194,
+                "dllName": "soundvoltex.dll",
+                "dataDisabled": "0F28D7",
+                "dataEnabled": "33D290"
+            },
+            {
+                "offset": 1802200,
+                "dllName": "soundvoltex.dll",
+                "dataDisabled": "E873834500",
+                "dataEnabled": "E874804500"
             }
         ]
     },
