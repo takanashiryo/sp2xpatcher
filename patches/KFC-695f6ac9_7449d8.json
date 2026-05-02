@@ -54,21 +54,6 @@
         ]
     },
     {
-        "name": "Shared mode WASAPI",
-        "description": "Allows for non-exclusive WASAPI audio.",
-        "caution": "Requires 48000Hz sample rate. Will slightly increase audio latency. Try combining this with the Low Latency Shared Audio option from spice2x.",
-        "gameCode": "KFC",
-        "type": "memory",
-        "patches": [
-            {
-                "offset": 6494684,
-                "dllName": "soundvoltex.dll",
-                "dataDisabled": "02",
-                "dataEnabled": "01"
-            }
-        ]
-    },
-    {
         "name": "Hide premium guide banner",
         "description": "blpass_ef (rainbow outline on health gauge) is shown instead of pt_sousa_usr.",
         "gameCode": "KFC",
@@ -535,17 +520,59 @@
         ]
     },
     {
-        "name": "ASIO 2 Channels Mode",
-        "description": "Use 2 channels instead of 8. Useful for some audio cards.",
-        "caution": "ONLY for ASIO audio users.",
+        "name": "Audio Mode",
+        "description": "Change audio mode profile.",
+        "caution": "ASIO works ONLY when the ASIO driver is set; otherwise, it fallback to WASAPI.",
         "gameCode": "KFC",
-        "type": "memory",
+        "type": "union",
         "patches": [
             {
-                "offset": 6052407,
-                "dllName": "soundvoltex.dll",
-                "dataDisabled": "2B",
-                "dataEnabled": "2A"
+                "name": "ASIO 8ch (Default)",
+                "patch": {
+                    "offset": 6052407,
+                    "dllName": "soundvoltex.dll",
+                    "data": "2B"
+                }
+            },
+            {
+                "name": "ASIO 2ch",
+                "patch": {
+                    "offset": 6052407,
+                    "dllName": "soundvoltex.dll",
+                    "data": "2A"
+                }
+            },
+            {
+                "name": "Shared Mode WASAPI 32bit 48kHz 2ch",
+                "patch": {
+                    "offset": 6052407,
+                    "dllName": "soundvoltex.dll",
+                    "data": "00"
+                }
+            },
+            {
+                "name": "Exclusive Mode WASAPI 16bit 44.1kHz 2ch",
+                "patch": {
+                    "offset": 6052407,
+                    "dllName": "soundvoltex.dll",
+                    "data": "02"
+                }
+            },
+            {
+                "name": "Exclusive Mode WASAPI 24bit 44.1kHz 2ch",
+                "patch": {
+                    "offset": 6052407,
+                    "dllName": "soundvoltex.dll",
+                    "data": "04"
+                }
+            },
+            {
+                "name": "Exclusive Mode WASAPI 24bit 44.1kHz 6ch",
+                "patch": {
+                    "offset": 6052407,
+                    "dllName": "soundvoltex.dll",
+                    "data": "0E"
+                }
             }
         ]
     },
